@@ -27,10 +27,13 @@ public class Couple {
     10 Contraceptive method used (não-ordenado) 1=No-use 2=Long-term 3=Short-term
     */
     
-    int wifeAge;
+    int wifeAge; // Wife's age (numerical)
     short wifeEducation; // 1=low, 2=medium, 3=regular, 4=high
     short husbandEducation; // 1=low, 2=medium, 3=regular, 4=high
-    int numberChildren;
+    int numberChildren; // Number of children ever born (numerical)
     boolean wifeReligion; // (binary) 0=Non-Islam (False), 1=Islam (True)
-    boolean wifeWork; // Wife's now working? (binary) 0=Yes, 1=No Obs.: I wasn' responsible to decide
+    boolean wifeWork; // Wife's now working? (binary) 0=Yes (False), 1=No (True) Obs.: I wasn' responsible to decide that yes is 0
+    short husbandOccupation; // Husband's occupation (integer) [1,...,4]
+    short standardLivingIndex ; // Standard-of-living index (ordered) 1=low, 2=medium, 3=regular, 4=high
+    
 }
