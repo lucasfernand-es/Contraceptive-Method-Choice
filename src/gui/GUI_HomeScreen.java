@@ -5,16 +5,37 @@
  */
 package gui;
 
+import kNNAlgorithm.kNNAlgorithm;
+import contraceptiveMethodChoice.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lucas
  */
 public class GUI_HomeScreen extends javax.swing.JFrame {
 
+    
+    private Couple couple;
+    private ArrayList<Couple> listCouple = new ArrayList<Couple>();
+    private kNNAlgorithm kNN;
     /**
      * Creates new form HomeScreen
      */
     public GUI_HomeScreen() {
+        initializeHomeScreen();
+    }
+    // couple object come back from createCouple
+    public GUI_HomeScreen(Couple couple) {
+        initializeHomeScreen();
+        
+        this.couple = couple;
+        jLCouple.setText( "\tCouple:\t" + couple.showCouple() );
+        jB_LoadCouple.setEnabled(true);
+    }
+    
+    private void initializeHomeScreen() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -28,33 +49,80 @@ public class GUI_HomeScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JB_CreateCouple = new javax.swing.JButton();
-        JB_LoadCouple = new javax.swing.JButton();
+        jB_CreateCouple = new javax.swing.JButton();
+        jB_LoadCouple = new javax.swing.JButton();
+        jLCouple = new javax.swing.JLabel();
+        jLLoaded = new javax.swing.JLabel();
+        jB_ShowLoadCouple = new javax.swing.JButton();
+        jB_RunKnn = new javax.swing.JButton();
+        jB_ShowSimilarity = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Contraceptive Method Choice");
 
-        JB_CreateCouple.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        JB_CreateCouple.setAlignmentX(0.5F);
-        JB_CreateCouple.setLabel("Create New Couple");
-        JB_CreateCouple.setMaximumSize(new java.awt.Dimension(175, 40));
-        JB_CreateCouple.setName("JB_CreateCouple"); // NOI18N
-        JB_CreateCouple.setSize(new java.awt.Dimension(100, 40));
-        JB_CreateCouple.addActionListener(new java.awt.event.ActionListener() {
+        jB_CreateCouple.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jB_CreateCouple.setAlignmentX(0.5F);
+        jB_CreateCouple.setLabel("Create New Couple");
+        jB_CreateCouple.setMaximumSize(new java.awt.Dimension(175, 40));
+        jB_CreateCouple.setName("jB_CreateCouple"); // NOI18N
+        jB_CreateCouple.setSize(new java.awt.Dimension(100, 40));
+        jB_CreateCouple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JB_CreateCoupleActionPerformed(evt);
+                jB_CreateCoupleActionPerformed(evt);
             }
         });
 
-        JB_LoadCouple.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        JB_LoadCouple.setText("Load Couples File");
-        JB_LoadCouple.setAlignmentX(0.5F);
-        JB_LoadCouple.setMaximumSize(new java.awt.Dimension(175, 40));
-        JB_LoadCouple.setName("JB_CreateNewCouple"); // NOI18N
-        JB_LoadCouple.setSize(new java.awt.Dimension(100, 40));
-        JB_LoadCouple.addActionListener(new java.awt.event.ActionListener() {
+        jB_LoadCouple.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jB_LoadCouple.setText("Load Couples File");
+        jB_LoadCouple.setAlignmentX(0.5F);
+        jB_LoadCouple.setEnabled(false);
+        jB_LoadCouple.setMaximumSize(new java.awt.Dimension(175, 40));
+        jB_LoadCouple.setName("JB_CreateNewCouple"); // NOI18N
+        jB_LoadCouple.setSize(new java.awt.Dimension(100, 40));
+        jB_LoadCouple.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JB_LoadCoupleActionPerformed(evt);
+                jB_LoadCoupleActionPerformed(evt);
+            }
+        });
+
+        jLLoaded.setText(" ");
+
+        jB_ShowLoadCouple.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jB_ShowLoadCouple.setText("Show Load Couples");
+        jB_ShowLoadCouple.setAlignmentX(0.5F);
+        jB_ShowLoadCouple.setEnabled(false);
+        jB_ShowLoadCouple.setMaximumSize(new java.awt.Dimension(175, 40));
+        jB_ShowLoadCouple.setName("JB_CreateNewCouple"); // NOI18N
+        jB_ShowLoadCouple.setSize(new java.awt.Dimension(100, 40));
+        jB_ShowLoadCouple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_ShowLoadCoupleActionPerformed(evt);
+            }
+        });
+
+        jB_RunKnn.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jB_RunKnn.setText("Run kNN ");
+        jB_RunKnn.setAlignmentX(0.5F);
+        jB_RunKnn.setEnabled(false);
+        jB_RunKnn.setMaximumSize(new java.awt.Dimension(175, 40));
+        jB_RunKnn.setName("JB_CreateNewCouple"); // NOI18N
+        jB_RunKnn.setSize(new java.awt.Dimension(100, 40));
+        jB_RunKnn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_RunKnnActionPerformed(evt);
+            }
+        });
+
+        jB_ShowSimilarity.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jB_ShowSimilarity.setText("Show Similiraty");
+        jB_ShowSimilarity.setAlignmentX(0.5F);
+        jB_ShowSimilarity.setEnabled(false);
+        jB_ShowSimilarity.setMaximumSize(new java.awt.Dimension(175, 40));
+        jB_ShowSimilarity.setName("JB_CreateNewCouple"); // NOI18N
+        jB_ShowSimilarity.setSize(new java.awt.Dimension(100, 40));
+        jB_ShowSimilarity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_ShowSimilarityActionPerformed(evt);
             }
         });
 
@@ -62,34 +130,87 @@ public class GUI_HomeScreen extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jLCouple, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JB_LoadCouple, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JB_CreateCouple, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(105, 105, 105))
+                    .addComponent(jB_ShowSimilarity, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB_RunKnn, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB_ShowLoadCouple, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB_CreateCouple, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jB_LoadCouple, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLLoaded, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(JB_CreateCouple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jB_CreateCouple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JB_LoadCouple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jB_LoadCouple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLLoaded, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jB_ShowLoadCouple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jB_RunKnn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jB_ShowSimilarity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jLCouple)
+                .addGap(49, 49, 49))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JB_CreateCoupleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CreateCoupleActionPerformed
-        GUI_CreateCouple createCouple = GUI_CreateCouple.getGUI_CreateCouple();
+    private void jB_CreateCoupleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_CreateCoupleActionPerformed
+        GUI_CreateCouple createCouple = new GUI_CreateCouple();
         createCouple.setVisible(true);
-    }//GEN-LAST:event_JB_CreateCoupleActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jB_CreateCoupleActionPerformed
 
-    private void JB_LoadCoupleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_LoadCoupleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JB_LoadCoupleActionPerformed
+    private void jB_LoadCoupleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_LoadCoupleActionPerformed
+        try {
+        
+            CoupleData coupleData = new CoupleData();
+            
+            coupleData.setCurrentFile();
+            this.listCouple = coupleData.readCoupleData();
+            
+            
+            //jLLoaded.setText("OK!");
+            
+            jB_ShowLoadCouple.setEnabled(true);
+            jB_RunKnn.setEnabled(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_jB_LoadCoupleActionPerformed
+
+    private void jB_ShowLoadCoupleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ShowLoadCoupleActionPerformed
+        CoupleData coupleData = new CoupleData();
+        
+        coupleData.setListCouple(listCouple);
+        coupleData.showData();
+    }//GEN-LAST:event_jB_ShowLoadCoupleActionPerformed
+
+    private void jB_RunKnnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_RunKnnActionPerformed
+        // create a new instance of the kNNAlgorithm
+        this.kNN = new kNNAlgorithm(this.listCouple, this.couple);
+        this.jB_ShowSimilarity.setEnabled(true);
+    }//GEN-LAST:event_jB_RunKnnActionPerformed
+
+    private void jB_ShowSimilarityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ShowSimilarityActionPerformed
+        this.kNN.showNeighbourhood();
+    }//GEN-LAST:event_jB_ShowSimilarityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,7 +249,12 @@ public class GUI_HomeScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JB_CreateCouple;
-    private javax.swing.JButton JB_LoadCouple;
+    private javax.swing.JButton jB_CreateCouple;
+    private javax.swing.JButton jB_LoadCouple;
+    private javax.swing.JButton jB_RunKnn;
+    private javax.swing.JButton jB_ShowLoadCouple;
+    private javax.swing.JButton jB_ShowSimilarity;
+    private javax.swing.JLabel jLCouple;
+    private javax.swing.JLabel jLLoaded;
     // End of variables declaration//GEN-END:variables
 }

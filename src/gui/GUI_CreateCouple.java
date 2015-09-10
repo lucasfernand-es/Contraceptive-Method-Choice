@@ -5,20 +5,27 @@
  */
 package gui;
 
+import contraceptiveMethodChoice.Couple;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author Lucas
  */
 public class GUI_CreateCouple extends javax.swing.JFrame {
 
+
     /**
      * Creates new form CreateCouple
      */
     public GUI_CreateCouple() {
         initComponents();
-        setItems();
         this.setLocationRelativeTo(null);
         
+        jLContraceptiveMethod.setVisible(false);
+        jCBContraceptiveMethod.setVisible(false);
+        jLDescription9.setVisible(false);
     }
     
     private static GUI_CreateCouple createCouple = null;
@@ -32,20 +39,6 @@ public class GUI_CreateCouple extends javax.swing.JFrame {
             
     }
     
-    private void setItems() {
-        /*Vector model = new Vector();
-        model.addElement( new Item(1, "low" ) );
-        model.addElement( new Item(2, "medium" ) );
-        model.addElement( new Item(3, "regular" ) );
-        model.addElement( new Item(4, "high" ) );
- 
-        JComboBox comboBox;*/
- 
-        //  Easiest approach is to just override toString() method
-        //  of the Item class
- 
-        //comboBox = new JComboBox( model );
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,7 +49,9 @@ public class GUI_CreateCouple extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        bGWifeReligion = new javax.swing.ButtonGroup();
+        bGWifeWork = new javax.swing.ButtonGroup();
+        bGMediaExposure = new javax.swing.ButtonGroup();
         jLWifeAge = new javax.swing.JLabel();
         jLWifeEducation = new javax.swing.JLabel();
         jLHusbandEducation = new javax.swing.JLabel();
@@ -67,16 +62,30 @@ public class GUI_CreateCouple extends javax.swing.JFrame {
         jLStandardLivingIndex = new javax.swing.JLabel();
         jLMediaExposure = new javax.swing.JLabel();
         jLContraceptiveMethod = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTFWifeAge = new javax.swing.JTextField();
         jCBWifeEducation = new javax.swing.JComboBox();
-        jTextField2 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jComboBox3 = new javax.swing.JComboBox();
-        jComboBox4 = new javax.swing.JComboBox();
-        jCBStatusAcademia = new javax.swing.JComboBox();
+        jTFNumberChildren = new javax.swing.JTextField();
+        jRBWifeReligionF = new javax.swing.JRadioButton();
+        jRBWifeReligionT = new javax.swing.JRadioButton();
+        jCBHusbandEducation = new javax.swing.JComboBox();
+        jCBHusbandOccupation = new javax.swing.JComboBox();
+        jCBStandardLivingIndex = new javax.swing.JComboBox();
+        jCBContraceptiveMethod = new javax.swing.JComboBox();
+        jLDescription0 = new javax.swing.JLabel();
+        jLDescription1 = new javax.swing.JLabel();
+        jLDescription3 = new javax.swing.JLabel();
+        jLDescription4 = new javax.swing.JLabel();
+        jLDescription5 = new javax.swing.JLabel();
+        jLDescription6 = new javax.swing.JLabel();
+        jLDescription7 = new javax.swing.JLabel();
+        jLDescription8 = new javax.swing.JLabel();
+        jLDescription9 = new javax.swing.JLabel();
+        jLDescription2 = new javax.swing.JLabel();
+        jRBWifeWorkF = new javax.swing.JRadioButton();
+        jRBWifeWorkT = new javax.swing.JRadioButton();
+        jRBMediaExposureF = new javax.swing.JRadioButton();
+        jRBMediaExposureT = new javax.swing.JRadioButton();
+        jBCreateCouple = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Create New Couple");
@@ -111,66 +120,156 @@ public class GUI_CreateCouple extends javax.swing.JFrame {
         jLContraceptiveMethod.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLContraceptiveMethod.setText("Contraceptive method used");
 
-        jTextField1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTFWifeAge.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jTFWifeAge.setText("30");
+        jTFWifeAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTFWifeAgeActionPerformed(evt);
             }
         });
 
         jCBWifeEducation.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jCBWifeEducation.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "j" }));
+        jCBWifeEducation.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
         jCBWifeEducation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCBWifeEducationActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jTFNumberChildren.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jTFNumberChildren.setText("0");
+        jTFNumberChildren.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jTFNumberChildrenActionPerformed(evt);
             }
         });
 
-        jRadioButton1.setText("Yes");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        bGWifeReligion.add(jRBWifeReligionF);
+        jRBWifeReligionF.setMnemonic('f');
+        jRBWifeReligionF.setSelected(true);
+        jRBWifeReligionF.setText("false");
+        jRBWifeReligionF.setActionCommand("FALSE");
+        jRBWifeReligionF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                jRBWifeReligionFActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        bGWifeReligion.add(jRBWifeReligionT);
+        jRBWifeReligionT.setMnemonic('t');
+        jRBWifeReligionT.setText("true");
+        jRBWifeReligionT.setActionCommand("TRUE");
+        jRBWifeReligionT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jRBWifeReligionTActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setText("Yes");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        jCBHusbandEducation.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jCBHusbandEducation.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
+        jCBHusbandEducation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                jCBHusbandEducationActionPerformed(evt);
             }
         });
 
-        jRadioButton4.setText("No");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        jCBHusbandOccupation.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jCBHusbandOccupation.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
+        jCBHusbandOccupation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                jCBHusbandOccupationActionPerformed(evt);
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "low", "medium", "regular", "high", " " }));
-
-        jCBStatusAcademia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fechada", "Aberta", "Em Balanço" }));
-        jCBStatusAcademia.setEnabled(false);
-        jCBStatusAcademia.addActionListener(new java.awt.event.ActionListener() {
+        jCBStandardLivingIndex.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jCBStandardLivingIndex.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
+        jCBStandardLivingIndex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBStatusAcademiaActionPerformed(evt);
+                jCBStandardLivingIndexActionPerformed(evt);
+            }
+        });
+
+        jCBContraceptiveMethod.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jCBContraceptiveMethod.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
+        jCBContraceptiveMethod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBContraceptiveMethodActionPerformed(evt);
+            }
+        });
+
+        jLDescription0.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription0.setText("(integer)");
+
+        jLDescription1.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription1.setText("1=low, 2=medium, 3=regular, 4=high");
+
+        jLDescription3.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription3.setText("0=Non-Islam (False), 1=Islam (True)");
+
+        jLDescription4.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription4.setText("(integer)");
+
+        jLDescription5.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription5.setText("0=Yes (False), 1=No (True)");
+
+        jLDescription6.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription6.setText("1=low, 2=medium, 3=regular, 4=high");
+
+        jLDescription7.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription7.setText("1=low, 2=medium, 3=regular, 4=high");
+
+        jLDescription8.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription8.setText("0=Good (False), 1=Not good (True)");
+
+        jLDescription9.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription9.setText("1=No-use, 2=Long-term, 3=Short-term");
+
+        jLDescription2.setFont(new java.awt.Font("Helvetica", 2, 10)); // NOI18N
+        jLDescription2.setText("1=low, 2=medium, 3=regular, 4=high");
+
+        bGWifeWork.add(jRBWifeWorkF);
+        jRBWifeWorkF.setSelected(true);
+        jRBWifeWorkF.setText("false");
+        jRBWifeWorkF.setActionCommand("FALSE");
+        jRBWifeWorkF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBWifeWorkFActionPerformed(evt);
+            }
+        });
+
+        bGWifeWork.add(jRBWifeWorkT);
+        jRBWifeWorkT.setText("true");
+        jRBWifeWorkT.setActionCommand("TRUE");
+        jRBWifeWorkT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBWifeWorkTActionPerformed(evt);
+            }
+        });
+
+        bGMediaExposure.add(jRBMediaExposureF);
+        jRBMediaExposureF.setSelected(true);
+        jRBMediaExposureF.setText("false");
+        jRBMediaExposureF.setActionCommand("FALSE");
+        jRBMediaExposureF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBMediaExposureFActionPerformed(evt);
+            }
+        });
+
+        bGMediaExposure.add(jRBMediaExposureT);
+        jRBMediaExposureT.setText("true");
+        jRBMediaExposureT.setActionCommand("TRUE");
+        jRBMediaExposureT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRBMediaExposureTActionPerformed(evt);
+            }
+        });
+
+        jBCreateCouple.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jBCreateCouple.setText("Save");
+        jBCreateCouple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCreateCoupleActionPerformed(evt);
             }
         });
 
@@ -178,118 +277,226 @@ public class GUI_CreateCouple extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLContraceptiveMethod)
-                    .addComponent(jLWifeEducation)
-                    .addComponent(jLWifeAge)
-                    .addComponent(jLHusbandEducation)
-                    .addComponent(jLNumberChildren)
-                    .addComponent(jLWifeReligion)
-                    .addComponent(jLWifeWork)
-                    .addComponent(jLHusbandOccupation)
-                    .addComponent(jLStandardLivingIndex)
-                    .addComponent(jLMediaExposure))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1)
-                        .addComponent(jCBWifeEducation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField2)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jRadioButton1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jRadioButton2))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jRadioButton3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jRadioButton4))
-                        .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox4, 0, 158, Short.MAX_VALUE))
-                    .addComponent(jCBStatusAcademia, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLContraceptiveMethod)
+                            .addComponent(jLWifeEducation)
+                            .addComponent(jLWifeAge)
+                            .addComponent(jLHusbandEducation)
+                            .addComponent(jLNumberChildren)
+                            .addComponent(jLWifeReligion)
+                            .addComponent(jLWifeWork)
+                            .addComponent(jLHusbandOccupation)
+                            .addComponent(jLStandardLivingIndex)
+                            .addComponent(jLMediaExposure))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTFWifeAge)
+                                .addComponent(jCBWifeEducation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTFNumberChildren)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jRBWifeReligionF)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jRBWifeReligionT))
+                                .addComponent(jCBHusbandEducation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jCBHusbandOccupation, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jCBStandardLivingIndex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jCBContraceptiveMethod, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jRBWifeWorkF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRBWifeWorkT))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jRBMediaExposureF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRBMediaExposureT)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLDescription2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLDescription6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLDescription0, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLDescription4, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLDescription9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                                .addComponent(jLDescription5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLDescription3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLDescription1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLDescription7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLDescription8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jBCreateCouple, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(153, 153, 153))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLWifeAge)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTFWifeAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLDescription0))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLWifeEducation)
-                    .addComponent(jCBWifeEducation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCBWifeEducation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLDescription1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLHusbandEducation)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCBHusbandEducation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLDescription2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLNumberChildren)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTFNumberChildren, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLDescription4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLWifeReligion)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(jRBWifeReligionF)
+                    .addComponent(jRBWifeReligionT)
+                    .addComponent(jLDescription3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLWifeWork)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
+                    .addComponent(jLDescription5)
+                    .addComponent(jRBWifeWorkF)
+                    .addComponent(jRBWifeWorkT))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLHusbandOccupation)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCBHusbandOccupation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLDescription6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLStandardLivingIndex)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLStandardLivingIndex)
+                    .addComponent(jCBStandardLivingIndex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLDescription7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLMediaExposure)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLContraceptiveMethod))
-                    .addComponent(jCBStatusAcademia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLMediaExposure)
+                    .addComponent(jLDescription8)
+                    .addComponent(jRBMediaExposureF)
+                    .addComponent(jRBMediaExposureT))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLContraceptiveMethod)
+                    .addComponent(jCBContraceptiveMethod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLDescription9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jBCreateCouple, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTFWifeAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFWifeAgeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTFWifeAgeActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTFNumberChildrenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNumberChildrenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jTFNumberChildrenActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void jRBWifeReligionFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBWifeReligionFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_jRBWifeReligionFActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void jRBWifeReligionTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBWifeReligionTActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
-
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
-
-    private void jCBStatusAcademiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBStatusAcademiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCBStatusAcademiaActionPerformed
+    }//GEN-LAST:event_jRBWifeReligionTActionPerformed
 
     private void jCBWifeEducationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBWifeEducationActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCBWifeEducationActionPerformed
 
+    private void jCBHusbandEducationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBHusbandEducationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBHusbandEducationActionPerformed
+
+    private void jCBHusbandOccupationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBHusbandOccupationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBHusbandOccupationActionPerformed
+
+    private void jCBStandardLivingIndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBStandardLivingIndexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBStandardLivingIndexActionPerformed
+
+    private void jRBWifeWorkFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBWifeWorkFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRBWifeWorkFActionPerformed
+
+    private void jRBWifeWorkTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBWifeWorkTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRBWifeWorkTActionPerformed
+
+    private void jRBMediaExposureFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBMediaExposureFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRBMediaExposureFActionPerformed
+
+    private void jRBMediaExposureTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBMediaExposureTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRBMediaExposureTActionPerformed
+
+    private void jBCreateCoupleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCreateCoupleActionPerformed
+        
+        try {
+            
+            // Instance's Data
+            Couple couple = new Couple();
+
+            couple.setWifeAge( Integer.parseInt( jTFWifeAge.getText() ) );
+            couple.setWifeEducation( Short.parseShort( jCBWifeEducation.getSelectedItem().toString() ) );
+            couple.setHusbandEducation(Short.parseShort( jCBHusbandEducation.getSelectedItem().toString() ));
+            couple.setNumberChildren( Integer.parseInt( jTFNumberChildren.getText() ) );
+            couple.setWifeReligion( Boolean.parseBoolean( bGWifeReligion.getSelection().getActionCommand() ) );
+            couple.setWifeWork( Boolean.parseBoolean( bGWifeWork.getSelection().getActionCommand() ) );
+            couple.setHusbandOccupation( Short.parseShort( jCBHusbandOccupation.getSelectedItem().toString() ) );
+            couple.setStandardLivingIndex( Short.parseShort( jCBStandardLivingIndex.getSelectedItem().toString() ) );
+            couple.setMediaExposure( Boolean.parseBoolean( bGMediaExposure.getSelection().getActionCommand() ) );
+            /*
+                couple.setContraceptiveMethod( Short.parseShort( jCBContraceptiveMethod.getSelectedItem().toString() ) );
+                short noClass = -1;
+                couple.setContraceptiveMethod( noClass );
+            */
+            
+            
+            //JOptionPane.showMessageDialog(null, couple.showCouple());
+            
+            int reply = JOptionPane.showConfirmDialog(null, 
+                    "Are you about the data?" + "\n" + couple.showCouple(), 
+                    "Alert", 
+                    JOptionPane.YES_NO_OPTION);
+            if(reply == JOptionPane.YES_OPTION) {
+                System.out.println("ok! - " + couple.showCouple());
+                returnHomeScreen(couple);
+            }
+        }
+        catch(Exception e) {
+            JOptionPane.showMessageDialog(null, 
+                    e,
+                    "Error!",
+                    JOptionPane.ERROR_MESSAGE
+                    );
+        }
+    }//GEN-LAST:event_jBCreateCoupleActionPerformed
+
+    private void jCBContraceptiveMethodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBContraceptiveMethodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBContraceptiveMethodActionPerformed
+
+    
+    private void returnHomeScreen(Couple couple) {
+        GUI_HomeScreen homeScreen = new GUI_HomeScreen(couple);
+        homeScreen.setVisible(true);
+        this.dispose();
+    }
     /**
      * @param args the command line arguments
      */
@@ -329,12 +536,26 @@ public class GUI_CreateCouple extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox jCBStatusAcademia;
+    private javax.swing.ButtonGroup bGMediaExposure;
+    private javax.swing.ButtonGroup bGWifeReligion;
+    private javax.swing.ButtonGroup bGWifeWork;
+    private javax.swing.JButton jBCreateCouple;
+    private javax.swing.JComboBox jCBContraceptiveMethod;
+    private javax.swing.JComboBox jCBHusbandEducation;
+    private javax.swing.JComboBox jCBHusbandOccupation;
+    private javax.swing.JComboBox jCBStandardLivingIndex;
     private javax.swing.JComboBox jCBWifeEducation;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
     private javax.swing.JLabel jLContraceptiveMethod;
+    private javax.swing.JLabel jLDescription0;
+    private javax.swing.JLabel jLDescription1;
+    private javax.swing.JLabel jLDescription2;
+    private javax.swing.JLabel jLDescription3;
+    private javax.swing.JLabel jLDescription4;
+    private javax.swing.JLabel jLDescription5;
+    private javax.swing.JLabel jLDescription6;
+    private javax.swing.JLabel jLDescription7;
+    private javax.swing.JLabel jLDescription8;
+    private javax.swing.JLabel jLDescription9;
     private javax.swing.JLabel jLHusbandEducation;
     private javax.swing.JLabel jLHusbandOccupation;
     private javax.swing.JLabel jLMediaExposure;
@@ -344,11 +565,13 @@ public class GUI_CreateCouple extends javax.swing.JFrame {
     private javax.swing.JLabel jLWifeEducation;
     private javax.swing.JLabel jLWifeReligion;
     private javax.swing.JLabel jLWifeWork;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JRadioButton jRBMediaExposureF;
+    private javax.swing.JRadioButton jRBMediaExposureT;
+    private javax.swing.JRadioButton jRBWifeReligionF;
+    private javax.swing.JRadioButton jRBWifeReligionT;
+    private javax.swing.JRadioButton jRBWifeWorkF;
+    private javax.swing.JRadioButton jRBWifeWorkT;
+    private javax.swing.JTextField jTFNumberChildren;
+    private javax.swing.JTextField jTFWifeAge;
     // End of variables declaration//GEN-END:variables
 }

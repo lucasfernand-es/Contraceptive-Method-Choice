@@ -1,4 +1,4 @@
-package contraceptive.method.choice;
+package contraceptiveMethodChoice;
 
 /**
  *
@@ -38,12 +38,23 @@ public class Couple {
         this.mediaExposure = mediaExposure;
         this.contraceptiveMethod = contraceptiveMethod;
     }
-
-    public String showCouple() {
-        return this.wifeAge + "," + this.wifeEducation + "," + 
-                this.husbandEducation + "," + this.numberChildren + "," + (this.wifeReligion? 1 : 0) + "," + 
-                (this.wifeWork? 1 : 0) + "," + this.husbandOccupation + "," + 
-                this.standardLivingIndex + "," + (this.mediaExposure? 1 : 0) + "," + this.contraceptiveMethod;
+    
+    public Couple (int wifeAge, short wifeEducation, short husbandEducation, int numberChildren,
+                        boolean wifeReligion, boolean wifeWork, short husbandOccupation,
+                        short standardLivingIndex, boolean mediaExposure) {
+        this.wifeAge = wifeAge;
+        this.wifeEducation = wifeEducation;
+        this.husbandEducation = husbandEducation;
+        this.numberChildren = numberChildren;
+        this.wifeReligion = wifeReligion;
+        this.wifeWork = wifeWork;
+        this.husbandOccupation = husbandOccupation;
+        this.standardLivingIndex = standardLivingIndex;
+        this.mediaExposure = mediaExposure;
+    }
+    
+    public Couple() {
+         
     }
     
     public int getWifeAge() {
@@ -124,5 +135,28 @@ public class Couple {
 
     public void setContraceptiveMethod(short contraceptiveMethod) {
         this.contraceptiveMethod = contraceptiveMethod;
+    }
+    
+    public String showCouple() {
+        return this.wifeAge + "," + this.wifeEducation + "," + 
+                this.husbandEducation + "," + this.numberChildren + "," + (this.wifeReligion? 1 : 0) + "," + 
+                (this.wifeWork? 1 : 0) + "," + this.husbandOccupation + "," + 
+                this.standardLivingIndex + "," + (this.mediaExposure? 1 : 0) + "," + this.contraceptiveMethod;
+    }
+    // compare the number of the equal attributes
+    public int compareTo(Couple couple) {
+        int equal = 0;
+        
+        if(this.getWifeAge() == couple.getWifeAge()) equal++;
+        if(this.getWifeEducation() == couple.getWifeEducation()) equal++;
+        if(this.getHusbandEducation() == couple.getHusbandEducation()) equal++;
+        if(this.getNumberChildren() == couple.getNumberChildren()) equal++;
+        if(this.isWifeReligion() == couple.isWifeReligion()) equal++;
+        if(this.isWifeWork() == couple.isWifeWork()) equal++;
+        if(this.getHusbandOccupation() == couple.getHusbandOccupation()) equal++;
+        if(this.getStandardLivingIndex() == couple.getStandardLivingIndex()) equal++;
+        if(this.isMediaExposure() == couple.isMediaExposure()) equal++;
+        
+        return equal;
     }
 }

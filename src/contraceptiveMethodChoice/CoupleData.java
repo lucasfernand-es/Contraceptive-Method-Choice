@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package contraceptive.method.choice;
+package contraceptiveMethodChoice;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,17 +18,17 @@ import javax.swing.JFileChooser;
  */
 public class CoupleData {
     
-    private ArrayList<Couple> listCouple = new ArrayList<Couple>();
+    private ArrayList listCouple = new ArrayList();
     private File currentFile = null; // Current Data File
     
     
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         CoupleData test = new CoupleData();
         test.setCurrentFile();
-        test.readData();
+        test.setListCouple( test.readCoupleData() );
         
         test.showData(); 
-   }
+   }*/
     public ArrayList<Couple> getListCouple() {
         return listCouple;
     }
@@ -65,14 +65,14 @@ public class CoupleData {
     /*
     *   readData() reads the file and transforms each line in a object.
     */
-    public void readData() {
+    public ArrayList<Couple> readCoupleData() {
         
         try {
-            Scanner input = new Scanner(this.getCurrentFile());  
-          
+            ArrayList<Couple> coupleData = new ArrayList<>();
+            Scanner input = new Scanner(this.getCurrentFile());
             String currentLine;
             String[] currentLineSplit;
-          
+
             // Instance's Data
             Couple couple;
 
@@ -86,14 +86,14 @@ public class CoupleData {
             short standardLivingIndex;
             boolean mediaExposure;
             short contraceptiveMethod;
-          
+
             while(input.hasNext())
             {
                 currentLine = input.nextLine();
                 //System.out.println(currentLine);
 
                 currentLineSplit = currentLine.split(",");
-                
+
                 wifeAge =               Integer.parseInt(currentLineSplit[0]);
                 wifeEducation =         Short.parseShort(currentLineSplit[1]);
                 husbandEducation =      Short.parseShort(currentLineSplit[2]);
@@ -104,30 +104,24 @@ public class CoupleData {
                 standardLivingIndex =   Short.parseShort(currentLineSplit[7]);
                 mediaExposure =         this.verifyString(currentLineSplit[8]);
                 contraceptiveMethod =   Short.parseShort(currentLineSplit[9]);
-                
+
                 couple = new Couple(wifeAge, wifeEducation, husbandEducation, numberChildren,
-                                    wifeReligion, wifeWork, husbandOccupation,
-                                    standardLivingIndex, mediaExposure, contraceptiveMethod);
-                
-                this.listCouple.add(couple);
-                
+                        wifeReligion, wifeWork, husbandOccupation,
+                        standardLivingIndex, mediaExposure, contraceptiveMethod);
+
+                coupleData.add(couple);
             }
-            
             input.close();
+            return coupleData;
         }
         catch(FileNotFoundException e){
-            e.printStackTrace();
+            return null;
         }
-        
-        
     }
     // verify the String to decide if it is true or false
     private boolean verifyString(String e) {
         int n = Integer.parseInt(e);
-        if(n == 1)
-            return true;
-        else
-            return false;
+        return n == 1;
         
     }
     public void showData() {

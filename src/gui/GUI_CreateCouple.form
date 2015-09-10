@@ -2,7 +2,11 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    <Component class="javax.swing.ButtonGroup" name="bGWifeReligion">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="bGWifeWork">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="bGMediaExposure">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -28,97 +32,143 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="27" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLContraceptiveMethod" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLWifeEducation" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLWifeAge" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLHusbandEducation" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLNumberChildren" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLWifeReligion" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLWifeWork" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLHusbandOccupation" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLStandardLivingIndex" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLMediaExposure" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextField1" max="32767" attributes="0"/>
-                      <Component id="jCBWifeEducation" max="32767" attributes="0"/>
-                      <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLContraceptiveMethod" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLWifeEducation" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLWifeAge" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLHusbandEducation" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLNumberChildren" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLWifeReligion" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLWifeWork" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLHusbandOccupation" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLStandardLivingIndex" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLMediaExposure" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jTFWifeAge" max="32767" attributes="0"/>
+                              <Component id="jCBWifeEducation" max="32767" attributes="0"/>
+                              <Component id="jTFNumberChildren" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jRBWifeReligionF" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jRBWifeReligionT" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jCBHusbandEducation" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jCBHusbandOccupation" max="32767" attributes="0"/>
+                              <Component id="jCBStandardLivingIndex" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jCBContraceptiveMethod" min="-2" pref="158" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jRBWifeWorkF" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jRBWifeWorkT" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jRBMediaExposureF" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jRBMediaExposureT" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="jComboBox3" max="32767" attributes="0"/>
-                      <Component id="jComboBox4" alignment="0" pref="158" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLDescription2" min="-2" pref="195" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jLDescription6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLDescription0" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLDescription4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLDescription9" alignment="0" pref="184" max="32767" attributes="0"/>
+                              <Component id="jLDescription5" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                              <Component id="jLDescription3" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                              <Component id="jLDescription1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLDescription7" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLDescription8" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jCBStatusAcademia" min="-2" pref="107" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jBCreateCouple" min="-2" pref="282" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLWifeAge" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTFWifeAge" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription0" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLWifeEducation" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jCBWifeEducation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLHusbandEducation" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCBHusbandEducation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLNumberChildren" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTFNumberChildren" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLWifeReligion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRBWifeReligionF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRBWifeReligionT" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLWifeWork" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRBWifeWorkF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRBWifeWorkT" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLHusbandOccupation" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCBHusbandOccupation" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLStandardLivingIndex" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jLMediaExposure" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLContraceptiveMethod" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jCBStatusAcademia" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLStandardLivingIndex" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCBStandardLivingIndex" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription7" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLMediaExposure" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRBMediaExposureF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRBMediaExposureT" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLContraceptiveMethod" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCBContraceptiveMethod" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLDescription9" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jBCreateCouple" pref="37" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -204,14 +254,15 @@
         <Property name="text" type="java.lang.String" value="Contraceptive method used"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="jTFWifeAge">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Helvetica Neue" size="14" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="30"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFWifeAgeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jCBWifeEducation">
@@ -220,8 +271,11 @@
           <Font name="Helvetica Neue" size="14" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="1">
-            <StringItem index="0" value="j"/>
+          <StringArray count="4">
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+            <StringItem index="3" value="4"/>
           </StringArray>
         </Property>
       </Properties>
@@ -229,89 +283,254 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBWifeEducationActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="jTFNumberChildren">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Helvetica Neue" size="14" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTFNumberChildrenActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+    <Component class="javax.swing.JRadioButton" name="jRBWifeReligionF">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Yes"/>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bGWifeReligion"/>
+        </Property>
+        <Property name="mnemonic" type="int" value="102"/>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="false"/>
+        <Property name="actionCommand" type="java.lang.String" value="FALSE"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRBWifeReligionFActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+    <Component class="javax.swing.JRadioButton" name="jRBWifeReligionT">
       <Properties>
-        <Property name="text" type="java.lang.String" value="No"/>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bGWifeReligion"/>
+        </Property>
+        <Property name="mnemonic" type="int" value="116"/>
+        <Property name="text" type="java.lang.String" value="true"/>
+        <Property name="actionCommand" type="java.lang.String" value="TRUE"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRBWifeReligionTActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+    <Component class="javax.swing.JComboBox" name="jCBHusbandEducation">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Yes"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton3ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="No"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton4ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox3">
-      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="14" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+            <StringItem index="3" value="4"/>
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBHusbandEducationActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox4">
+    <Component class="javax.swing.JComboBox" name="jCBHusbandOccupation">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Helvetica Neue" size="14" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="low"/>
-            <StringItem index="1" value="medium"/>
-            <StringItem index="2" value="regular"/>
-            <StringItem index="3" value="high"/>
-            <StringItem index="4" value=" "/>
+          <StringArray count="4">
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+            <StringItem index="3" value="4"/>
           </StringArray>
         </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jCBStatusAcademia">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Fechada"/>
-            <StringItem index="1" value="Aberta"/>
-            <StringItem index="2" value="Em Balan&#xe7;o"/>
-          </StringArray>
-        </Property>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBStatusAcademiaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBHusbandOccupationActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jCBStandardLivingIndex">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="14" style="0"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+            <StringItem index="3" value="4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBStandardLivingIndexActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jCBContraceptiveMethod">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="14" style="0"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="1"/>
+            <StringItem index="1" value="2"/>
+            <StringItem index="2" value="3"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBContraceptiveMethodActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription0">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="(integer)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="1=low, 2=medium, 3=regular, 4=high"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="0=Non-Islam (False), 1=Islam (True)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="(integer)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="0=Yes (False), 1=No (True)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription6">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="1=low, 2=medium, 3=regular, 4=high"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="1=low, 2=medium, 3=regular, 4=high"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription8">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="0=Good (False), 1=Not good (True)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="1=No-use, 2=Long-term, 3=Short-term"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLDescription2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="10" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="1=low, 2=medium, 3=regular, 4=high"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRBWifeWorkF">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bGWifeWork"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="false"/>
+        <Property name="actionCommand" type="java.lang.String" value="FALSE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRBWifeWorkFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRBWifeWorkT">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bGWifeWork"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="true"/>
+        <Property name="actionCommand" type="java.lang.String" value="TRUE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRBWifeWorkTActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRBMediaExposureF">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bGMediaExposure"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="false"/>
+        <Property name="actionCommand" type="java.lang.String" value="FALSE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRBMediaExposureFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRBMediaExposureT">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="bGMediaExposure"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="true"/>
+        <Property name="actionCommand" type="java.lang.String" value="TRUE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRBMediaExposureTActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBCreateCouple">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Save"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCreateCoupleActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
