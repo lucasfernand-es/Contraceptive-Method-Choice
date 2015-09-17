@@ -1,5 +1,7 @@
 package contraceptiveMethodChoice;
 
+import java.util.Random;
+
 /**
  *
  * @author Lucas Fernandes
@@ -14,19 +16,19 @@ public class Couple {
     */
     
     private int wifeAge; // (numerical)
-    private short wifeEducation; // (categorical)  1=low, 2=medium, 3=regular, 4=high
-    private short husbandEducation; // (categorical)  1=low, 2=medium, 3=regular, 4=high
+    private int wifeEducation; // (categorical)  1=low, 2=medium, 3=regular, 4=high
+    private int husbandEducation; // (categorical)  1=low, 2=medium, 3=regular, 4=high
     private int numberChildren; // (numerical)
     private boolean wifeReligion; // (binary) 0=Non-Islam (False), 1=Islam (True)
     private boolean wifeWork; // Wife's now working? (binary) 0=Yes (False), 1=No (True)
-    private short husbandOccupation; // (integer) [1,...,4]
-    private short standardLivingIndex; // Standard-of-living index (categorical)  1=low, 2=medium, 3=regular, 4=high
+    private int husbandOccupation; // (integer) [1,...,4]
+    private int standardLivingIndex; // Standard-of-living index (categorical)  1=low, 2=medium, 3=regular, 4=high
     private boolean mediaExposure; // Media exposure (binary) 0=Good (False), 1=Not good (True)
-    private short contraceptiveMethod; // Contraceptive method used (não-ordenado)/(class attribute) 1=No-use 2=Long-term 3=Short-term
+    private int contraceptiveMethod; // Contraceptive method used (class attribute) 1=No-use 2=Long-term 3=Short-term
     
-    public Couple (int wifeAge, short wifeEducation, short husbandEducation, int numberChildren,
-                        boolean wifeReligion, boolean wifeWork, short husbandOccupation,
-                        short standardLivingIndex, boolean mediaExposure, short contraceptiveMethod) {
+    public Couple (int wifeAge, int wifeEducation, int husbandEducation, int numberChildren,
+                        boolean wifeReligion, boolean wifeWork, int husbandOccupation,
+                        int standardLivingIndex, boolean mediaExposure, int contraceptiveMethod) {
         this.wifeAge = wifeAge;
         this.wifeEducation = wifeEducation;
         this.husbandEducation = husbandEducation;
@@ -39,9 +41,9 @@ public class Couple {
         this.contraceptiveMethod = contraceptiveMethod;
     }
     
-    public Couple (int wifeAge, short wifeEducation, short husbandEducation, int numberChildren,
-                        boolean wifeReligion, boolean wifeWork, short husbandOccupation,
-                        short standardLivingIndex, boolean mediaExposure) {
+    public Couple (int wifeAge, int wifeEducation, int husbandEducation, int numberChildren,
+                        boolean wifeReligion, boolean wifeWork, int husbandOccupation,
+                        int standardLivingIndex, boolean mediaExposure) {
         this.wifeAge = wifeAge;
         this.wifeEducation = wifeEducation;
         this.husbandEducation = husbandEducation;
@@ -52,10 +54,28 @@ public class Couple {
         this.standardLivingIndex = standardLivingIndex;
         this.mediaExposure = mediaExposure;
     }
-    
-    public Couple() {
-         
+    // generate random Couple
+    public Couple(Random seed) {
+        
+
+        // nextInt is normally exclusive of the top value,
+        // so add 1 to make it inclusive
+
+        
+        this.wifeAge = seed.nextInt((90 - 15) + 1) + 15; // Minimun age is 15 and Maximum age is 90
+        this.wifeEducation = seed.nextInt(4) + 1; // [1,2,3,4]
+        this.husbandEducation = seed.nextInt(4) + 1; // [1,2,3,4]
+        this.numberChildren = seed.nextInt((15 - 0) + 1) + 0; // Minimun number of children is 0 and Maximum number of children is 15
+        this.wifeReligion = seed.nextBoolean();
+        this.wifeWork = seed.nextBoolean();
+        this.husbandOccupation = seed.nextInt(4) + 1; // [1,2,3,4]
+        this.standardLivingIndex = seed.nextInt(4) + 1; // [1,2,3,4]
+        this.mediaExposure = seed.nextBoolean();
+        this.contraceptiveMethod = seed.nextInt(3) + 1; // [1,2,3]
     }
+     public Couple () {
+         
+     }
     
     public int getWifeAge() {
         return wifeAge;
@@ -65,19 +85,19 @@ public class Couple {
         this.wifeAge = wifeAge;
     }
 
-    public short getWifeEducation() {
+    public int getWifeEducation() {
         return wifeEducation;
     }
 
-    public void setWifeEducation(short wifeEducation) {
+    public void setWifeEducation(int wifeEducation) {
         this.wifeEducation = wifeEducation;
     }
 
-    public short getHusbandEducation() {
+    public int getHusbandEducation() {
         return husbandEducation;
     }
 
-    public void setHusbandEducation(short husbandEducation) {
+    public void setHusbandEducation(int husbandEducation) {
         this.husbandEducation = husbandEducation;
     }
 
@@ -105,19 +125,19 @@ public class Couple {
         this.wifeWork = wifeWork;
     }
 
-    public short getHusbandOccupation() {
+    public int getHusbandOccupation() {
         return husbandOccupation;
     }
 
-    public void setHusbandOccupation(short husbandOccupation) {
+    public void setHusbandOccupation(int husbandOccupation) {
         this.husbandOccupation = husbandOccupation;
     }
 
-    public short getStandardLivingIndex() {
+    public int getStandardLivingIndex() {
         return standardLivingIndex;
     }
 
-    public void setStandardLivingIndex(short standardLivingIndex) {
+    public void setStandardLivingIndex(int standardLivingIndex) {
         this.standardLivingIndex = standardLivingIndex;
     }
 
@@ -129,11 +149,11 @@ public class Couple {
         this.mediaExposure = mediaExposure;
     }
 
-    public short getContraceptiveMethod() {
+    public int getContraceptiveMethod() {
         return contraceptiveMethod;
     }
 
-    public void setContraceptiveMethod(short contraceptiveMethod) {
+    public void setContraceptiveMethod(int contraceptiveMethod) {
         this.contraceptiveMethod = contraceptiveMethod;
     }
     

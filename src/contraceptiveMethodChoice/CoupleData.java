@@ -8,7 +8,6 @@ package contraceptiveMethodChoice;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 
@@ -69,52 +68,53 @@ public class CoupleData {
         
         try {
             ArrayList<Couple> coupleData = new ArrayList<>();
-            Scanner input = new Scanner(this.getCurrentFile());
-            String currentLine;
-            String[] currentLineSplit;
-
-            // Instance's Data
-            Couple couple;
-
-            int wifeAge;
-            short wifeEducation;
-            short husbandEducation;
-            int numberChildren;
-            boolean wifeReligion;
-            boolean wifeWork;
-            short husbandOccupation;
-            short standardLivingIndex;
-            boolean mediaExposure;
-            short contraceptiveMethod;
-
-            while(input.hasNext())
-            {
-                currentLine = input.nextLine();
-                //System.out.println(currentLine);
-
-                currentLineSplit = currentLine.split(",");
-
-                wifeAge =               Integer.parseInt(currentLineSplit[0]);
-                wifeEducation =         Short.parseShort(currentLineSplit[1]);
-                husbandEducation =      Short.parseShort(currentLineSplit[2]);
-                numberChildren =        Integer.parseInt(currentLineSplit[3]);
-                wifeReligion =          this.verifyString(currentLineSplit[4]);//Boolean.parseBoolean(currentLineSplit[4]);
-                wifeWork =              this.verifyString(currentLineSplit[5]);
-                husbandOccupation =     Short.parseShort(currentLineSplit[6]);
-                standardLivingIndex =   Short.parseShort(currentLineSplit[7]);
-                mediaExposure =         this.verifyString(currentLineSplit[8]);
-                contraceptiveMethod =   Short.parseShort(currentLineSplit[9]);
-
-                couple = new Couple(wifeAge, wifeEducation, husbandEducation, numberChildren,
-                        wifeReligion, wifeWork, husbandOccupation,
-                        standardLivingIndex, mediaExposure, contraceptiveMethod);
-
-                coupleData.add(couple);
+            try (Scanner input = new Scanner(this.getCurrentFile())) {
+                String currentLine;
+                String[] currentLineSplit;
+                
+                // Instance's Data
+                Couple couple;
+                
+                int wifeAge;
+                short wifeEducation;
+                short husbandEducation;
+                int numberChildren;
+                boolean wifeReligion;
+                boolean wifeWork;
+                short husbandOccupation;
+                short standardLivingIndex;
+                boolean mediaExposure;
+                short contraceptiveMethod;
+                
+                while(input.hasNext())
+                {
+                    currentLine = input.nextLine();
+                    //System.out.println(currentLine);
+                    
+                    currentLineSplit = currentLine.split(",");
+                    
+                    wifeAge =               Integer.parseInt(currentLineSplit[0]);
+                    wifeEducation =         Short.parseShort(currentLineSplit[1]);
+                    husbandEducation =      Short.parseShort(currentLineSplit[2]);
+                    numberChildren =        Integer.parseInt(currentLineSplit[3]);
+                    wifeReligion =          this.verifyString(currentLineSplit[4]);//Boolean.parseBoolean(currentLineSplit[4]);
+                    wifeWork =              this.verifyString(currentLineSplit[5]);
+                    husbandOccupation =     Short.parseShort(currentLineSplit[6]);
+                    standardLivingIndex =   Short.parseShort(currentLineSplit[7]);
+                    mediaExposure =         this.verifyString(currentLineSplit[8]);
+                    contraceptiveMethod =   Short.parseShort(currentLineSplit[9]);
+                    
+                    couple = new Couple(wifeAge, wifeEducation, husbandEducation, numberChildren,
+                            wifeReligion, wifeWork, husbandOccupation,
+                            standardLivingIndex, mediaExposure, contraceptiveMethod);
+                    
+                    coupleData.add(couple);
+                }
             }
-            input.close();
             return coupleData;
         }
         catch(FileNotFoundException e){
+            System.out.println(e);
             return null;
         }
     }
@@ -126,13 +126,6 @@ public class CoupleData {
     }
     public void showData() {
         
-        System.out.println("\n==> Couples:");
-        Iterator it = this.getListCouple().iterator();
-        
-        while (it.hasNext()) {
-            Couple couple = (Couple) it.next();
-            System.out.println(couple.showCouple());
-        }
     }
 
 

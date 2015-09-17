@@ -9,9 +9,10 @@ import contraceptiveMethodChoice.Couple;
 
 
 // This algorithm will be as generic as possible
-class Neighbour {
+public class Neighbour {
     
     // item is the data
+    private int index;
     private Couple neighbour;
     private float similarity;
     
@@ -19,11 +20,8 @@ class Neighbour {
         
     }
     
-    public Neighbour(Couple neighbour) {
-        this.neighbour = neighbour;
-    }
-    
-    public Neighbour(Couple neighbour, Couple point) {
+    public Neighbour(int index, Couple neighbour, Couple point) {
+        this.index = index;
         this.neighbour = neighbour;
         this.calcSimilarity(point);
     }
@@ -60,30 +58,15 @@ class Neighbour {
     
     public String showNeighbour() {
         // return this.neighbour.showCouple() + "\t s: " + this.similarity;
-        return "\t s: " + this.similarity;
+        return "\t" + this.index + "\t" + this.neighbour.showCouple() +"\ts: " + this.similarity;
     }
     
-    public boolean compareTo(Neighbour neighbour) {
-        
-            float d1 = 1 - this.getSimilarity();
-            float d2 = 1 - neighbour.getSimilarity();
-            if ( d1 < d2 ) {
-                return true;
-            }
-            else {
-                return false;
-            }
+    public float distance(){
+        return 1 - this.similarity;
     }
-    /*public static void main(String[] args) {
-        Neighbour n;
-        short one = 1;
-        short two = 2; 
-        Couple couple = new Couple(45, one, one, 4, false, true, one, one, false);
-        Couple couple2 = new Couple(50, two, two, 4, true, false, two, two, false);
-        
-        n = new Neighbour(couple, couple2);
-        System.out.println("s: " + n.getSimilarity());
-        
-    }*/
+    
+    public int getIndex() {
+        return index;
+    }
     
 }

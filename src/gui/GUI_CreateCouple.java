@@ -6,6 +6,7 @@
 package gui;
 
 import contraceptiveMethodChoice.Couple;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 
@@ -473,12 +474,10 @@ public class GUI_CreateCouple extends javax.swing.JFrame {
                     "Are you about the data?" + "\n" + couple.showCouple(), 
                     "Alert", 
                     JOptionPane.YES_NO_OPTION);
-            if(reply == JOptionPane.YES_OPTION) {
-                System.out.println("ok! - " + couple.showCouple());
+            if(reply == JOptionPane.YES_OPTION)
                 returnHomeScreen(couple);
-            }
         }
-        catch(Exception e) {
+        catch(NumberFormatException | HeadlessException e) {
             JOptionPane.showMessageDialog(null, 
                     e,
                     "Error!",
